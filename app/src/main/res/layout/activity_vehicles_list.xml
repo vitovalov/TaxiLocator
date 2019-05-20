@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.list.VehiclesListActivity">
+    <!--android:background="@android:color/background_dark"-->
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_vehicles_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <include layout="@layout/error_layout"/>
+
+    <include layout="@layout/loading_layout"/>
+
+</LinearLayout>

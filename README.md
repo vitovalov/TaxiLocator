@@ -1,0 +1,1 @@
+Compiled with Android Studio 3.4.1

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TaxiLocator</string>
+    <string name="ooops_something_wen_t_wrong">Ooops! Something wen\'t wrong</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
