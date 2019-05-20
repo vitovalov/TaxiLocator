@@ -11,10 +11,10 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivitiesModule {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = [VehiclesListModule::class])
+    @ContributesAndroidInjector(modules = [VehiclesListModule::class, ActivityCommonModule::class])
     abstract fun contributeVehiclesListActivity(): VehiclesListActivity
 
     @PerActivity
-    @ContributesAndroidInjector(modules = [VehicleMapModule::class])
+    @ContributesAndroidInjector(modules = [VehicleMapModule::class, ActivityCommonModule::class])
     abstract fun contributeMapsActivity(): VehicleMapActivity
 }

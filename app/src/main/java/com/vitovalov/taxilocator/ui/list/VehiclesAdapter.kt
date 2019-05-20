@@ -26,7 +26,7 @@ class VehiclesAdapter(private val navigator: Navigator) : RecyclerView.Adapter<V
     override fun getItemCount() = vehicles.size
 
     override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
-        holder.bind(vehicles[position], navigator)
+        holder.bind(vehicles, vehicles[position], navigator)
     }
 
     fun setVehicles(vehicles: List<Vehicle>) {
@@ -36,9 +36,9 @@ class VehiclesAdapter(private val navigator: Navigator) : RecyclerView.Adapter<V
 }
 
 class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(vehicle: Vehicle, navigator: Navigator) = with(itemView) {
+    fun bind(vehicles: List<Vehicle>, vehicle: Vehicle, navigator: Navigator) = with(itemView) {
         adapter_vehicle_fleet_type.text = vehicle.fleetType
         adapter_vehicle_heading.text = vehicle.heading.toString()
-        setOnClickListener { navigator.navigateToDetail(vehicle) }
+        setOnClickListener { navigator.navigateToDetail(vehicles, vehicle) }
     }
 }

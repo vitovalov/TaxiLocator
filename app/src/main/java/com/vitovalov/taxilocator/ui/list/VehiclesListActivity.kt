@@ -19,6 +19,8 @@ class VehiclesListActivity : AppCompatActivity(), VehiclesListContract.View {
 
     @Inject
     lateinit var presenter: VehiclesListContract.Presenter
+    @Inject
+    lateinit var navigator: Navigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -31,7 +33,7 @@ class VehiclesListActivity : AppCompatActivity(), VehiclesListContract.View {
 
     private fun initViews() {
         with(activity_vehicles_list_rv) {
-            adapter = VehiclesAdapter(Navigator.NavigatorImpl(this@VehiclesListActivity)) // TODO
+            adapter = VehiclesAdapter(navigator)
             val linearLayoutManager = LinearLayoutManager(this@VehiclesListActivity)
             layoutManager = linearLayoutManager
             setHasFixedSize(true)
