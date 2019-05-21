@@ -1,6 +1,5 @@
 package com.vitovalov.taxilocator.ui.list
 
-import android.widget.Toast
 import com.vitovalov.taxilocator.domain.GetVehiclesUseCase
 import com.vitovalov.taxilocator.domain.bo.GetVehiclesResponse
 
@@ -21,7 +20,8 @@ class VehiclesListPresenter(
         TODO("not implemented")
     }
 
-    private fun requestData() = getVehiclesUseCase.execute(53.694865F, 9.757589F, 53.394655F, 10.099891F, ::handleSuccess, ::handleError)
+    private fun requestData() =
+        getVehiclesUseCase.execute(53.694865F, 9.757589F, 53.394655F, 10.099891F, ::handleSuccess, ::handleError)
 
     private fun handleError(throwable: Throwable) {
         view.showError()

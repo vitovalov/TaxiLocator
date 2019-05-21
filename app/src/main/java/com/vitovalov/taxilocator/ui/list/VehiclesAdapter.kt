@@ -39,6 +39,6 @@ class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(vehicles: List<Vehicle>, vehicle: Vehicle, navigator: Navigator) = with(itemView) {
         adapter_vehicle_fleet_type.text = vehicle.fleetType
         adapter_vehicle_heading.text = vehicle.heading.toString()
-        setOnClickListener { navigator.navigateToDetail(vehicles, vehicle) }
+        setOnClickListener { navigator.navigateToDetail(vehicles, vehicle.id) }
     }
 }

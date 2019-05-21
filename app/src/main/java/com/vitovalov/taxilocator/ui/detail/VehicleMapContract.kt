@@ -7,21 +7,14 @@ interface VehicleMapContract {
     interface View {
         fun showVehiclesOnMap(
             vehicles: List<Vehicle>,
-            vehicle: Vehicle
+            centralVehicle: Vehicle
         )
-//        fun showError()
-//        fun showVehicles(vehicles: List<Vehicle>)
-//        fun addVehicles(vehicles: List<Vehicle>)
-//        fun showLoading()
-//        fun hideLoading()
-//        fun hideError()
-//        fun showVehicles(vehicles: List<Vehicle>)
+
+        fun showError()
     }
 
     interface Presenter {
-        fun onVehiclesObtained(vehicles: List<Vehicle>, vehicle: Vehicle)
+        fun onVehiclesObtained(vehicles: List<Vehicle>, vehicleId: Int)
         fun onViewReady()
-//        fun onStop()
-//        fun onRetryClick()
     }
 }

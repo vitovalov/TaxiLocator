@@ -6,18 +6,15 @@ class VehicleMapPresenter(
     private val view: VehicleMapContract.View
 ) : VehicleMapContract.Presenter {
 
-    lateinit var vehicles: List<Vehicle>
-    lateinit var vehicle: Vehicle
+    private lateinit var vehicles: List<Vehicle>
+    private var centralVehicle: Vehicle? = null
 
-    override fun onVehiclesObtained(vehicles: List<Vehicle>, vehicle: Vehicle) {
+    override fun onVehiclesObtained(vehicles: List<Vehicle>, vehicleId: Int) {
         this.vehicles = vehicles
-        this.vehicle = vehicle
+        this.centralVehicle = vehicles.firstOrNull { v -> v.id == vehicleId }
     }
 
     override fun onViewReady() {
-        view.showVehiclesOnMap(vehicles, vehicle)
+        centralVehicle?.let { view.showVehiclesOnMap(vehicles, it) } ?: view.showError()
     }
-//    override fun onStop() {
-//        getVehiclesUseCase.clear()
-//    }
 }

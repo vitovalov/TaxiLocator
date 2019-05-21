@@ -28,14 +28,14 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
     lateinit var navigator: Navigator
 
     companion object {
-        fun getCallingIntent(context: Context, vehicles: List<Vehicle>, vehicle: Vehicle): Intent {
+        fun getCallingIntent(context: Context, vehicles: List<Vehicle>, vehicleId: Int): Intent {
             val intent = Intent(context, VehicleMapActivity::class.java)
-            intent.putExtra(ARG_VEHICLE, vehicle)
+            intent.putExtra(ARG_CENTER_VEHICLE_ID, vehicleId)
             intent.putParcelableArrayListExtra(ARG_VEHICLES, ArrayList(vehicles))
             return intent
         }
 
-        const val ARG_VEHICLE = "ARG_VEHICLE"
+        const val ARG_CENTER_VEHICLE_ID = "ARG_CENTER_VEHICLE_ID"
         const val ARG_VEHICLES = "ARG_VEHICLES"
     }
 
@@ -55,9 +55,13 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
         val extras = intent
         extras?.apply {
             val vehicles: ArrayList<Vehicle> = getParcelableArrayListExtra(ARG_VEHICLES)
-            val vehicle = extras.getParcelableExtra(ARG_VEHICLE) as Vehicle
-            presenter.onVehiclesObtained(vehicles, vehicle)
+            val vehicleId = extras.getIntExtra(ARG_CENTER_VEHICLE_ID, -1)
+            presenter.onVehiclesObtained(vehicles, vehicleId)
         }
+    }
+
+    override fun showError() {
+        TODO("not implemented")
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -70,9 +74,9 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
 
     override fun showVehiclesOnMap(
         vehicles: List<Vehicle>,
-        vehicle: Vehicle
+        centralVehicle: Vehicle
     ) {
-        val pointCenter = LatLng(vehicle.coordinate.first, vehicle.coordinate.second)
+        val pointCenter = LatLng(centralVehicle.coordinate.first, centralVehicle.coordinate.second)
 
         val bounds = LatLngBounds.Builder()
         for (it in vehicles) {
@@ -81,7 +85,7 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
             map.addMarker(MarkerOptions().position(point).title("Marker in ${it.fleetType}"))
         }
 //        map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 100))
-        map.addMarker(MarkerOptions().position(pointCenter).title("Marker in ${vehicle.fleetType}"))
+        map.addMarker(MarkerOptions().position(pointCenter).title("Marker in ${centralVehicle.fleetType}"))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(pointCenter, 15F))
     }
 
