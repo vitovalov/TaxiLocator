@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:paddingLeft="20dp"
-              android:background="?android:selectableItemBackground"
-              android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingLeft="20dp">
 
-    <TextView android:layout_width="match_parent" android:layout_height="44dp"
-              android:gravity="center_vertical"
-              android:id="@+id/adapter_vehicle_fleet_type"
-              tools:text="TAXI"
-    />
-    <TextView android:layout_width="match_parent" android:layout_height="44dp"
-              android:id="@+id/adapter_vehicle_heading"
-              android:gravity="center_vertical"
-              tools:text="84.5435"
-    />
+    <TextView
+        android:id="@+id/adapter_vehicle_fleet_type"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        tools:text="TAXI" />
+
+    <TextView
+        android:id="@+id/adapter_vehicle_heading"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        tools:text="84.5435" />
 </LinearLayout>
