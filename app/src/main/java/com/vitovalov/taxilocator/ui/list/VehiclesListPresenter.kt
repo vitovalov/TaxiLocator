@@ -2,6 +2,8 @@ package com.vitovalov.taxilocator.ui.list
 
 import com.vitovalov.taxilocator.domain.GetVehiclesUseCase
 import com.vitovalov.taxilocator.domain.bo.GetVehiclesResponse
+import com.vitovalov.taxilocator.error.GenericException
+import com.vitovalov.taxilocator.error.NoConnectivityException
 
 class VehiclesListPresenter(
     private val view: VehiclesListContract.View,
@@ -17,14 +19,21 @@ class VehiclesListPresenter(
     }
 
     override fun onRetryClick() {
-        TODO("not implemented")
+        view.hideError()
+        requestData()
     }
 
-    private fun requestData() =
+    private fun requestData() {
+        view.showLoading()
         getVehiclesUseCase.execute(53.694865F, 9.757589F, 53.394655F, 10.099891F, ::handleSuccess, ::handleError)
+    }
 
     private fun handleError(throwable: Throwable) {
-        view.showError()
+        when (throwable) {
+            is NoConnectivityException -> view.showNoInternetError()
+            is GenericException -> view.showGenericError()
+        }
+        view.hideLoading()
     }
 
     private fun handleSuccess(getVehiclesResponse: GetVehiclesResponse) {

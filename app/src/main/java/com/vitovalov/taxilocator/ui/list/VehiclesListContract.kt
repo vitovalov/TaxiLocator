@@ -5,13 +5,12 @@ import com.vitovalov.taxilocator.domain.bo.Vehicle
 interface VehiclesListContract {
 
     interface View {
-        fun showError()
-//        fun showVehicles(vehicles: List<Vehicle>)
-//        fun addVehicles(vehicles: List<Vehicle>)
         fun showLoading()
         fun hideLoading()
-        fun hideError()
         fun showVehicles(vehicles: List<Vehicle>)
+        fun showGenericError()
+        fun showNoInternetError()
+        fun hideError()
     }
 
     interface Presenter {

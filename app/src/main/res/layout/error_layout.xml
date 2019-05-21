@@ -4,16 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:visibility="gone"
-    tools:showIn="@layout/activity_vehicles_list">
+    tools:visibility="visible">
 
     <TextView
-        android:id="@+id/textError"
+        android:id="@+id/error_layout_text_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/noInternetView"
-        android:text="@string/ooops_something_wen_t_wrong"
-        android:textColor="@android:color/white"
+        android:text="@string/error_error_generic"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/error_layout_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/retry" />
+
 </LinearLayout>

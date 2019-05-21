@@ -83,7 +83,6 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
             bounds.include(point)
             map.addMarker(MarkerOptions().position(point).title("Marker in ${it.fleetType}"))
         }
-//        map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 100))
         map.addMarker(MarkerOptions().position(pointCenter).title("Marker in ${centralVehicle.fleetType}"))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(pointCenter, 15F))
     }

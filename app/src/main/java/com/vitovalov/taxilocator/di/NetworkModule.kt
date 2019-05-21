@@ -1,10 +1,8 @@
 package com.vitovalov.taxilocator.di
 
+import android.content.Context
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import com.vitovalov.taxilocator.data.NetworkConfig
-import com.vitovalov.taxilocator.data.VehiclesApi
-import com.vitovalov.taxilocator.data.VehiclesMapper
-import com.vitovalov.taxilocator.data.VehiclesRepositoryImpl
+import com.vitovalov.taxilocator.data.*
 import com.vitovalov.taxilocator.domain.VehiclesRepository
 import dagger.Module
 import dagger.Provides
@@ -30,11 +28,14 @@ class NetworkModule {
         .build()
 
     @Provides
-    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
+    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, connectivityInterceptor: ConnectivityInterceptor): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(connectivityInterceptor)
             .build()
 
+    @Provides
+    fun provideConnectivityInterceptor(appContext: Context): ConnectivityInterceptor = ConnectivityInterceptor(appContext)
 
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {

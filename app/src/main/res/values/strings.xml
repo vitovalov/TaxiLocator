@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">TaxiLocator</string>
-    <string name="ooops_something_wen_t_wrong">Ooops! Something wen\'t wrong</string>
+    <string name="error_error_generic">Ooops! Something wen\'t wrong</string>
+    <string name="error_error_no_internet">Internet connection required</string>
     <string name="title_activity_maps">Map</string>
+    <string name="retry">Retry</string>
 </resources>
