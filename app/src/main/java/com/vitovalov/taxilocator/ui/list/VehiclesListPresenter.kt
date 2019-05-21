@@ -28,7 +28,7 @@ class VehiclesListPresenter(
         getVehiclesUseCase.execute(53.694865F, 9.757589F, 53.394655F, 10.099891F, ::handleSuccess, ::handleError)
     }
 
-    private fun handleError(throwable: Throwable) {
+    fun handleError(throwable: Throwable) {
         when (throwable) {
             is NoConnectivityException -> view.showNoInternetError()
             is GenericException -> view.showGenericError()
@@ -36,7 +36,7 @@ class VehiclesListPresenter(
         view.hideLoading()
     }
 
-    private fun handleSuccess(getVehiclesResponse: GetVehiclesResponse) {
+    fun handleSuccess(getVehiclesResponse: GetVehiclesResponse) {
         val vehicles = getVehiclesResponse.vehiclesList
         view.showVehicles(vehicles)
         view.hideLoading()
