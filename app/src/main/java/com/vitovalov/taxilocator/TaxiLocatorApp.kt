@@ -15,7 +15,7 @@ class TaxiLocatorApp: Application(), HasActivityInjector {
     @Inject
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
 
-    lateinit var component: AppComponent
+    private lateinit var component: AppComponent
 
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
 
@@ -36,6 +36,3 @@ class TaxiLocatorApp: Application(), HasActivityInjector {
 
 
 }
-
-
-fun Context.asApp() = this.applicationContext as TaxiLocatorApp

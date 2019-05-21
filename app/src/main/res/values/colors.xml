@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="available_taxi">#33D505</color>
+    <color name="busy_taxi">#D50505</color>
 </resources>
