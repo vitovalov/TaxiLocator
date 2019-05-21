@@ -1,4 +1,4 @@
-package com.vitovalov.taxilocator.extensions
+package com.vitovalov.taxilocator.internal.extensions
 
 import android.view.LayoutInflater
 import android.view.View

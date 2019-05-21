@@ -1,4 +1,4 @@
-package com.vitovalov.taxilocator.di
+package com.vitovalov.taxilocator.internal.di
 
 import android.content.Context
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

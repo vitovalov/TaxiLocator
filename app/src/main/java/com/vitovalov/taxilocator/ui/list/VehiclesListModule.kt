@@ -1,7 +1,7 @@
 package com.vitovalov.taxilocator.ui.list
 
 import android.app.Activity
-import com.vitovalov.taxilocator.di.PerActivity
+import com.vitovalov.taxilocator.internal.di.PerActivity
 import com.vitovalov.taxilocator.domain.GetVehiclesUseCase
 import com.vitovalov.taxilocator.domain.VehiclesRepository
 import dagger.Binds

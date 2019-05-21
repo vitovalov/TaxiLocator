@@ -2,8 +2,8 @@ package com.vitovalov.taxilocator.ui.list
 
 import com.vitovalov.taxilocator.domain.GetVehiclesUseCase
 import com.vitovalov.taxilocator.domain.bo.GetVehiclesResponse
-import com.vitovalov.taxilocator.error.GenericException
-import com.vitovalov.taxilocator.error.NoConnectivityException
+import com.vitovalov.taxilocator.internal.error.GenericException
+import com.vitovalov.taxilocator.internal.error.NoConnectivityException
 
 class VehiclesListPresenter(
     private val view: VehiclesListContract.View,

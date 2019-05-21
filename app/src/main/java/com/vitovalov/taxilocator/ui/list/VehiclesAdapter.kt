@@ -3,10 +3,10 @@ package com.vitovalov.taxilocator.ui.list
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.vitovalov.taxilocator.Navigator
+import com.vitovalov.taxilocator.ui.Navigator
 import com.vitovalov.taxilocator.R
 import com.vitovalov.taxilocator.domain.bo.Vehicle
-import com.vitovalov.taxilocator.extensions.inflate
+import com.vitovalov.taxilocator.internal.extensions.inflate
 import kotlinx.android.synthetic.main.adapter_vehicle.view.*
 
 class VehiclesAdapter(private val navigator: Navigator) : RecyclerView.Adapter<VehicleViewHolder>() {

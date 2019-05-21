@@ -6,8 +6,8 @@ import com.nhaarman.mockito_kotlin.verify
 import com.vitovalov.taxilocator.domain.GetVehiclesUseCase
 import com.vitovalov.taxilocator.domain.bo.GetVehiclesResponse
 import com.vitovalov.taxilocator.domain.bo.Vehicle
-import com.vitovalov.taxilocator.error.GenericException
-import com.vitovalov.taxilocator.error.NoConnectivityException
+import com.vitovalov.taxilocator.internal.error.GenericException
+import com.vitovalov.taxilocator.internal.error.NoConnectivityException
 import com.vitovalov.taxilocator.ui.list.VehiclesListContract
 import com.vitovalov.taxilocator.ui.list.VehiclesListPresenter
 import org.junit.Test

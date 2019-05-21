@@ -2,7 +2,7 @@ package com.vitovalov.taxilocator.data
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.vitovalov.taxilocator.error.NoConnectivityException
+import com.vitovalov.taxilocator.internal.error.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
 

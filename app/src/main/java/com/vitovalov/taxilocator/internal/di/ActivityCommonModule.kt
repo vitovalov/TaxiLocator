@@ -1,7 +1,7 @@
-package com.vitovalov.taxilocator.di
+package com.vitovalov.taxilocator.internal.di
 
 import android.app.Activity
-import com.vitovalov.taxilocator.Navigator
+import com.vitovalov.taxilocator.ui.Navigator
 import dagger.Module
 import dagger.Provides
 
@@ -12,6 +12,6 @@ abstract class ActivityCommonModule {
         @Provides
         @PerActivity
         @JvmStatic
-        internal fun provideNavigator(activity: Activity): Navigator = Navigator.NavigatorImpl(activity)
+        internal fun provideNavigator(activity: Activity): Navigator = Navigator(activity)
     }
 }

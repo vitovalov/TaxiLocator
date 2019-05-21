@@ -11,7 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import com.vitovalov.taxilocator.Navigator
+import com.vitovalov.taxilocator.ui.Navigator
 import com.vitovalov.taxilocator.R
 import com.vitovalov.taxilocator.domain.bo.Vehicle
 import dagger.android.AndroidInjection

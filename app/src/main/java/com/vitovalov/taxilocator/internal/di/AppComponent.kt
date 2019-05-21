@@ -1,4 +1,4 @@
-package com.vitovalov.taxilocator.di
+package com.vitovalov.taxilocator.internal.di
 
 import com.vitovalov.taxilocator.TaxiLocatorApp
 import dagger.BindsInstance

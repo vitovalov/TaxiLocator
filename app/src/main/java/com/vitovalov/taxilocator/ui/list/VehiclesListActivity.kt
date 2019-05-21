@@ -3,11 +3,11 @@ package com.vitovalov.taxilocator.ui.list
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vitovalov.taxilocator.Navigator
+import com.vitovalov.taxilocator.ui.Navigator
 import com.vitovalov.taxilocator.R
 import com.vitovalov.taxilocator.domain.bo.Vehicle
-import com.vitovalov.taxilocator.extensions.hide
-import com.vitovalov.taxilocator.extensions.show
+import com.vitovalov.taxilocator.internal.extensions.hide
+import com.vitovalov.taxilocator.internal.extensions.show
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_vehicles_list.*
 import kotlinx.android.synthetic.main.error_layout.*
