@@ -17,4 +17,5 @@ class VehicleMapPresenter(
     override fun onViewReady() {
         centralVehicle?.let { view.showVehiclesOnMap(vehicles, it) } ?: view.showError()
     }
+    override fun onStop() { view.cleanUp() }
 }

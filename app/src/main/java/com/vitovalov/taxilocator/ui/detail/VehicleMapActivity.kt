@@ -11,9 +11,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import com.vitovalov.taxilocator.ui.Navigator
 import com.vitovalov.taxilocator.R
 import com.vitovalov.taxilocator.domain.bo.Vehicle
+import com.vitovalov.taxilocator.ui.Navigator
 import dagger.android.AndroidInjection
 import java.util.*
 import javax.inject.Inject
@@ -63,6 +63,10 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
         TODO("not implemented")
     }
 
+    override fun cleanUp() {
+        map.clear()
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
 
@@ -90,6 +94,6 @@ class VehicleMapActivity : AppCompatActivity(), OnMapReadyCallback, VehicleMapCo
     override fun onStop() {
         super.onStop()
 
-        map.clear()
+        presenter.onStop()
     }
 }

@@ -41,6 +41,13 @@ class VehicleMapPresenterTest {
         verify(mockView).showVehiclesOnMap(any(), any())
     }
 
+    @Test
+    fun `should cleanup view on stop`() {
+        presenter.onStop()
+
+        verify(mockView).cleanUp()
+    }
+
     private fun givenSomeVehicles(): List<Vehicle> =
             listOf(
                     Vehicle(
