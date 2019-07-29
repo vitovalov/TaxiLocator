@@ -12,6 +12,6 @@ This app allows to see a list of taxi cabs near to certain coordinates. One scre
 See Unit Tests under app/src/test. 
 
 ##### To improve, given more time: 
- -  add network response caching backed by some database (Realm, Room,
+ -  Add network response caching backed by some database (Realm, Room,
     etc)
--  add more tests specially of business logic (domain package)
+-  Add more tests specially of business logic (domain package)
