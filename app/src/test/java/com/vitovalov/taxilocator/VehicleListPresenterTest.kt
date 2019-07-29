@@ -19,8 +19,8 @@ class VehicleListPresenterTest {
 
     private val presenter by lazy {
         VehiclesListPresenter(
-                mockView,
-                mockGetVehiclesUseCase
+            mockView,
+            mockGetVehiclesUseCase
         )
     }
 
@@ -97,14 +97,14 @@ class VehicleListPresenterTest {
     }
 
     private fun givenSuccessResponse(): GetVehiclesResponse =
-            GetVehiclesResponse(
-                    listOf(
-                            Vehicle(
-                                    Pair(0.0, 0.0),
-                                    "", 1.0, 1
-                            )
-                    )
+        GetVehiclesResponse(
+            listOf(
+                Vehicle(
+                    Pair(0.0, 0.0),
+                    "", 1.0, 1
+                )
             )
+        )
 
     private fun givenEmptyResponse(): GetVehiclesResponse = GetVehiclesResponse(emptyList())
 }

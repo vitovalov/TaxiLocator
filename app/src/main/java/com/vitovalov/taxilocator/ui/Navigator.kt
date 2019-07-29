@@ -6,7 +6,7 @@ import com.vitovalov.taxilocator.ui.detail.VehicleMapActivity
 
 
 class Navigator(
-        private val activity: Activity
+    private val activity: Activity
 ) {
     fun navigateToDetail(vehicles: List<Vehicle>, vehicleId: Int) {
         activity.startActivity(VehicleMapActivity.getCallingIntent(activity, vehicles, vehicleId))

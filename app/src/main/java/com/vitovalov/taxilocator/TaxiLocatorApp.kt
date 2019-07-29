@@ -2,7 +2,6 @@ package com.vitovalov.taxilocator
 
 import android.app.Activity
 import android.app.Application
-import android.content.Context
 import com.vitovalov.taxilocator.internal.di.AppComponent
 import com.vitovalov.taxilocator.internal.di.DaggerAppComponent
 import dagger.android.AndroidInjector

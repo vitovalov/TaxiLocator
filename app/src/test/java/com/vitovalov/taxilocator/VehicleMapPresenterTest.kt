@@ -14,7 +14,7 @@ class VehicleMapPresenterTest {
 
     private val presenter by lazy {
         VehicleMapPresenter(
-                mockView
+            mockView
         )
     }
 
@@ -49,10 +49,10 @@ class VehicleMapPresenterTest {
     }
 
     private fun givenSomeVehicles(): List<Vehicle> =
-            listOf(
-                    Vehicle(
-                            Pair(0.0, 0.0),
-                            "", 1.0, 3
-                    )
+        listOf(
+            Vehicle(
+                Pair(0.0, 0.0),
+                "", 1.0, 3
             )
+        )
 }
